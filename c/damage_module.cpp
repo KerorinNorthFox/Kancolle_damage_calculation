@@ -12,7 +12,7 @@ int engagement_form_func(){
 	return numbers_list[r];
 }
 
-float correction_before_cap_func(int engagement_form, int attack_formation, int damaged_condition, int attack_mode);{
+float correction_before_cap_func(int engagement_form, int attack_formation, int damaged_condition, int attack_mode){
         float engagement_form_correction;
         if (engagement_form == 1){
             engagement_for_correction = 1.0;
@@ -60,6 +60,7 @@ float correction_before_cap_func(int engagement_form, int attack_formation, int 
 
         return correction;
 }
-/*
-float
-*/ 
+
+int basic_attackpower_func(int firepower){
+        return firepower + 5;
+}
