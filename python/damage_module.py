@@ -21,19 +21,19 @@ def correction_before_cap_func(engagement_form, attack_formation, damaged_condit
         engagement_form_correction = 0.6
     
     if attack_formation == "1":
-        attack_formation_fire = 1
+        attack_formation_firepower = 1
         attack_formation_torpedo = 1
     elif attack_formation == "2":
-        attack_formation_fire = 0.8
+        attack_formation_firepower = 0.8
         attack_formation_torpedo = 0.8
     elif attack_formation == "3":
-        attack_formation_fire = 0.7
+        attack_formation_firepower = 0.7
         attack_formation_torpedo = 0.7
     elif attack_formation == "4":
-        attack_formation_fire = 0.6
+        attack_formation_firepower = 0.6
         attack_formation_torpedo = 0.6
     elif attack_formation == "5":
-        attack_formation_fire = 0.6
+        attack_formation_firepower = 0.6
         attack_formation_torpedo = 0.6
         
     if damaged_condition == "1":
@@ -44,7 +44,7 @@ def correction_before_cap_func(engagement_form, attack_formation, damaged_condit
         damaged_condition_correction = 0.4
         
     if attack_mode == "1":
-        correction = engagement_form_correction * attack_formation_fire * damaged_condition_correction
+        correction = engagement_form_correction * attack_formation_firepower * damaged_condition_correction
     elif attack_mode == "2":
         correction = engagement_form_correction * attack_formation_torpedo * damaged_condition_correction
     return correction
