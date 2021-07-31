@@ -1,6 +1,6 @@
 import random, math
 
-#交戦形態
+###交戦形態#################################################################################################
 def engagement_form_func(): #used
     random_number = list(range(1, 5))
     w = [9, 6, 3, 2]
@@ -9,7 +9,7 @@ def engagement_form_func(): #used
         form = i
     return form
 
-#キャップ前補正
+###キャップ前補正############################################################################################
 def correction_before_cap_func(engagement_form, attack_formation, damaged_condition, attack_mode):
     if engagement_form == 1: #used
         engagement_form_correction = 1
@@ -49,15 +49,15 @@ def correction_before_cap_func(engagement_form, attack_formation, damaged_condit
         correction = engagement_form_correction * attack_formation_torpedo * damaged_condition_correction
     return correction
 
-#基本攻撃力
+###基本攻撃力###############################################################################################
 def basic_attackpower_func(firepower):
     return int(firepower) + 5
 
-#キャップ前攻撃力
+###キャップ前攻撃力#########################################################################################
 def attackpower_before_cap_func(basic_attackpower, correction_before_cap):
     return basic_attackpower * correction_before_cap
 
-#キャップ後攻撃力
+###キャップ後攻撃力#########################################################################################
 def attackpower_after_cap_func(attackpower_before_cap, attack_mode):
     if attack_mode == "1":
         if attackpower_before_cap >= 220:
@@ -71,25 +71,25 @@ def attackpower_after_cap_func(attackpower_before_cap, attack_mode):
             attackpower_after_cap = attackpower_before_cap
     return attackpower_after_cap
 
-#最終攻撃力
+###最終攻撃力##############################################################################################
 def final_attackpower_func(attackpower_after_cap):
     return math.floor(attackpower_after_cap)
 
-#防御力
+###防御力##################################################################################################
 def vitality_func(armor):
     armor = int(armor)
     vital = 0.7 * armor + 0.6 * random.randint(0, armor)
     return vital
 
-#ダメージ
+###ダメージ################################################################################################
 def damage_func(final_attackpower, vital, correction_amount_of_ammo):
     return math.floor((final_attackpower - vital) * correction_amount_of_ammo)
 
-#割合ダメージ(カスダメ)
+###割合ダメージ(カスダメ)###################################################################################
 def percentage_damage_func(now_hp):
     return math.floor(now_hp * 0.06 + random.randint(0, now_hp) * 0.08)
 
-#弾薬量補正
+###弾薬量補正##############################################################################################
 def ammo_func(now_ammo, max_ammo):
     left_ammo_ratio = now_ammo / max_ammo * 100
     return left_ammo_ratio / 50
