@@ -24,13 +24,13 @@ int main(void)
 	float correction_before_cap;
 	correction_before_cap = correction_before_cap_func(engagement_form, attack_formation, damaged_condition, attack_mode);
 	printf("\n>>キャップ前補正:%f", correction_before_cap);
-	/*
-	int basic_attackpower;
+	
+	float basic_attackpower;
 	basic_attackpower = basic_attackpower(firepower);
-	printf("\n>>基本攻撃力:%d", basic_attackpower);
+	printf("\n>>基本攻撃力:%f", basic_attackpower);
 	
 	float attackpower_before_cap;
 	attackpower_before_cap = attackpower_before_cap_func(basic_attackpower, correction_before_cap);
 	printf("\n>>キャップ前攻撃力:%f", attackpower_before_cap);
-	*/
+	
 }
