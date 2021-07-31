@@ -61,6 +61,10 @@ float correction_before_cap_func(int engagement_form, int attack_formation, int 
         return correction;
 }
 
-int basic_attackpower_func(int firepower){
-        return firepower + 5;
+float basic_attackpower_func(int firepower){
+        return float(firepower) + 5.0;
+}
+
+float attackpower_before_cap_func(float basic_attaclpower, float correction_before_cap){
+        return basic_attackpower * correction_before_cap;
 }
