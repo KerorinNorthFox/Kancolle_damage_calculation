@@ -29,17 +29,17 @@ float correction_before_cap_func(int engagement_form, int attack_formation, int 
             attack_formation_firepower = 1.0;
             attack_formation_torpedo = 1.0;
         }else if (attack_formation == 2){
-            attack_formation_firepower = 1;
-            attack_formation_torpedo = 1;
+            attack_formation_firepower = 0.8;
+            attack_formation_torpedo = 0.8;
         }else if (attack_formation == 3){
-            attack_formation_firepower = 1;
-            attack_formation_torpedo = 1;
+            attack_formation_firepower = 0.7;
+            attack_formation_torpedo = 0.7;
         }else if (attack_formation == 4){
-            attack_formation_firepower = 1;
-            attack_formation_torpedo = 1;
+            attack_formation_firepower = 0.6;
+            attack_formation_torpedo = 0.6;
         }else if (attack_formation == 5){
-            attack_formation_firepower = 1;
-            attack_formation_torpedo = 1;
+            attack_formation_firepower = 0.6;
+            attack_formation_torpedo = 0.6;
         }
 }
 /*
