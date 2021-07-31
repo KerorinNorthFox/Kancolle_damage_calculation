@@ -41,6 +41,24 @@ float correction_before_cap_func(int engagement_form, int attack_formation, int 
             attack_formation_firepower = 0.6;
             attack_formation_torpedo = 0.6;
         }
+
+        float damaged_condition_correction;
+        if (damaged_condition == 1){
+            damaged_condition_correction = 1.0;
+        }else if (damaged_condition == 2){
+            damaged_condition_correction = 0.7;
+        }else if (damaged_condition == 3){
+            damaged_condition_correction = 0.4;
+        }
+
+        float correction;
+        if (attack_mode == 1){
+            correction = engagement_form_correction * attack_formation_firepower * damaged_condition_correction;
+        }else if (attack_mode == 2){
+            correction = engagement_form_correction * attack_formation_torpedo * damaged_condition_correction;
+        }
+
+        return correction;
 }
 /*
 float
