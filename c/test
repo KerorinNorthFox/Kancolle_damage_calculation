@@ -1,0 +1,14 @@
+int damage;
+damage = damage_func(final_attackpower, vitality, 1.00);
+if (damage <= 0){
+    int percentage_damage;
+    percentage_damage = percentage_damage_func(now_hp);
+    if (percentage_damage <= 0){
+        printf("\n>>:miss");
+    }else{
+        printf("\n>>");
+        printf("\n>>:%d", percentage_damage);
+    }
+}else{
+    printf("\n>>:%d", damage);
+}
