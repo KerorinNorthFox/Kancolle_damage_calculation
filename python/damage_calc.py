@@ -24,6 +24,7 @@ enemy_armor = input("\n>>敵の装甲値:")
 now_hp = input("\n>>現在の敵HP:")
 
 loopnumber = input("\n>>繰り返す回数:")
+loopnumber = int(loopnumber)
 
 ##################################################################
 
@@ -42,7 +43,7 @@ miss_counter = 0
 
 print("\n#############################################")
 
-for i in range(0, int(loopnumber)):
+for i in range(0, loopnumber):
     engagement_form = kd.engagement_form_func()
 
     correction_before_cap.append(kd.correction_before_cap_func(engagement_form, attack_formation, damaged_condition, attack_mode))
@@ -66,7 +67,7 @@ for i in range(0, int(loopnumber)):
     damage = kd.damage_func(final_attackpower[i], vitality[i], 1)
     if damage <= 0:
         percentage_damage = kd.percentage_damage_func(int(now_hp))
-        if percentage_damage <= 0:
+        if percentage_damage >= 0:
             results_list.append("miss")
             prob_miss += 100
             miss_counter += 1
@@ -94,8 +95,8 @@ for i in range(0, int(loopnumber)):
     print(f">>{i+1}回目の結果:{results_list[i]}")
 
 print("\n#############################################")
-print(f"\n>>命中率:{prob_hit}")
-print(f">>装甲貫通率:{prob_through_the_armor}")
-print(f">>割合ダメージ率:{prob_percentage_damage}")
-print(f">>失敗率:{prob_miss}")
-print(f">>失敗回数:{miss_counter}")
+print(f"\n>>命中率:{prob_hit/loopnumber}%")
+print(f">>装甲貫通率:{prob_through_the_armor/loopnumber}%")
+print(f">>割合ダメージ率:{prob_percentage_damage/loopnumber}%")
+print(f">>失敗率:{prob_miss/loopnumber}%")
+print(f">>失敗回数:{miss_counter}回")
