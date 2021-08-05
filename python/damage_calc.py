@@ -32,6 +32,11 @@ attackpower_after_cap = []
 final_attackpower = []
 vitality = []
 results_list = []
+prob_hit = 0
+prob_through_the_armor = 0
+prob_percentage_damage = 0
+prob_miss = 0
+miss_counter = 0
 
 for i in range(0, int(loopnumber)):
     engagement_form = kd.engagement_form_func()
@@ -59,13 +64,19 @@ for i in range(0, int(loopnumber)):
         percentage_damage = kd.percentage_damage_func(int(now_hp))
         if percentage_damage <= 0:
             results_list.append("miss")
+            prob_miss += 100
+            miss_counter += 1
             #print("\n>>結果:miss")
         else:
             results_list.append(str(percentage_damage) + "(カスダメ)")
+            prob_percentage_damage += 100
+            prob_hit += 100
             #print("\n>>カスダメ")
             #print(f">>結果:{percentage_damage}")
     else:
         results_list.append(damage)
+        prob_through_the_armor += 100
+        prob_hit += 100
         #print(f"\n>>結果:{damage}")
     
 ############################################################################
@@ -77,3 +88,5 @@ for i in range(0, int(loopnumber)):
     print(f">>{i+1}回目の最終攻撃力:{final_attackpower[i]}")
     print(f">>{i+1}回目の敵の防御力:{vitality[i]}")
     print(f">>{i+1}回目の結果:{results_list[i]}")
+
+    
