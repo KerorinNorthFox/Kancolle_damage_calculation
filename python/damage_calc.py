@@ -1,5 +1,7 @@
 import Kancolle_damage_func as kd
 
+print("\n#############################################")
+
 attack_formation = input('''>>陣形選択
 #1:単縦陣
 #2:複縦陣
@@ -37,6 +39,8 @@ prob_through_the_armor = 0
 prob_percentage_damage = 0
 prob_miss = 0
 miss_counter = 0
+
+print("\n#############################################")
 
 for i in range(0, int(loopnumber)):
     engagement_form = kd.engagement_form_func()
@@ -89,4 +93,9 @@ for i in range(0, int(loopnumber)):
     print(f">>{i+1}回目の敵の防御力:{vitality[i]}")
     print(f">>{i+1}回目の結果:{results_list[i]}")
 
-    
+print("\n#############################################")
+print(f"\n>>命中率:{prob_hit}")
+print(f">>装甲貫通率:{prob_through_the_armor}")
+print(f">>割合ダメージ率:{prob_percentage_damage}")
+print(f">>失敗率:{prob_miss}")
+print(f">>失敗回数:{miss_counter}")
