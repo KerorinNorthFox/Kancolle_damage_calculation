@@ -28,6 +28,7 @@ loopnumber = int(loopnumber)
 
 ##################################################################
 
+engagement_form = []
 correction_before_cap = []
 basic_attackpower = []
 attackpower_before_cap = []
